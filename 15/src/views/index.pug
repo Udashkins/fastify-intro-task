@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    title Главная
+  body
+    if username
+      p= `Добро пожаловать, ${username}!`
+      form(action="/sessions/delete" method="post")
+        input(type="submit" value="Выйти")
+    else
+      h1 Добро пожаловать, гость
+      p
+        a(href="/sessions/new") Войти
