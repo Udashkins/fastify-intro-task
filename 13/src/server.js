@@ -12,6 +12,12 @@ export default async () => {
   await app.register(formbody);
 
   // BEGIN (write your solution here)
+  await app.register(middie);
+  
+  app.addHook('onRequest', (req, res, done) => {
+    res.header('Cache-Control', 'no-store');
+    done();
+  });
 
   // END
 
